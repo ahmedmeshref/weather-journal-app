@@ -1,10 +1,13 @@
-// import app dependencies
+/*
+app dependencies
+ */
 const express = require("express"),
     cors = require("cors"),
-    bodyParser = require("body-parser");
+    bodyParser = require("body-parser"),
+    port = 8000;
 
-const port = 8000;
-
+// Setup empty JS object to act as endpoint for all routes
+let projectData = {};
 
 // Initialize an app instance
 const app = express()
@@ -22,14 +25,16 @@ app.use(cors())
 // Initialize the main project folder
 app.use(express.static('website'));
 
-// Setup empty JS object to act as endpoint for all routes
-projectData = {};
 
 /*
 Routes
  */
-app.get("/weather", function(req, res) {
-    res.send("I am heree");
+// return projectData
+app.get("/data", function(req, res) {
+    res.send(JSON.stringify({
+        'success': true,
+        'data': projectData
+    }));
 })
 
 // Server Setup
