@@ -1,44 +1,14 @@
 body {
     background: #fffff8;
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-    text-align: center;
 }
 
-#app {
+section {
     margin: 50px 200px;
 }
 
-
-textarea {
-    background: #22b2da;
-    color: #f0d43a;
-    font-size: 20px;
-    font-family: 'Oswald', sans-serif;
+div.title{
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
 }
-
-/* Reset style for HTML element on active to have no border*/
-input:focus,
-select:focus,
-textarea:focus,
-button:focus {
-    outline: none;
-}
-
-/* Style for Placeholder Text*/
-::placeholder { /* Firefox, Chrome, Opera */
-    color: #f0d43a;
-    font-family: 'Oswald', sans-serif;
-
-}
-
-:-ms-input-placeholder { /* Internet Explorer 10-11 */
-    color: #f0d43a;
-    font-family: 'Oswald', sans-serif;
-
-}
-
-::-ms-input-placeholder { /* Microsoft Edge */
-    color: #f0d43a;
-    font-family: 'Oswald', sans-serif;
-
-} 

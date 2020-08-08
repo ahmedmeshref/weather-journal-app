@@ -17,7 +17,7 @@
     </nav>
 </header>
 <main id="app">
-    <section class="add-new-feeling">
+    <section id="form-holder">
         <form id="generate">
             <div class="form-group holder zip-holder">
                 <label for="zip">Zip</label>
@@ -30,14 +30,14 @@
             <button type="submit" class="btn btn-primary btn-lg btn-block">Generate</button>
         </form>
     </section>
-    <div class="holder entry">
+    <section id="entry">
         <div class="title">Most Recent Entry</div>
         <div id="entryHolder">
             <div id="date"></div>
             <div id="temp"></div>
             <div id="content"></div>
         </div>
-    </div>
+    </section>
 </main>
 <script src="app.js" type="text/javascript"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
