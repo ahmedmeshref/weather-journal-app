@@ -30,15 +30,19 @@ app.use(express.static('website'));
 Routes
  */
 // return projectData
-app.get("/data", function(req, res) {
+app.get("/feeling", function (req, res) {
     res.send(JSON.stringify({
         'success': true,
         'data': projectData
     }));
 })
 
-// save given data into projectData
-let saveData = (temp, content, date) => {
+// post data handler
+app.post("/feeling", function (req, res) {
+    let req_data = req.body,
+        temp = req_data["temp"],
+        content = req_data["content"],
+        date = req_data["date"];
     // verify that all needed values are giving on the request
     if (temp && content && date) {
         projectData = {
@@ -46,21 +50,6 @@ let saveData = (temp, content, date) => {
             content: content,
             date: date
         }
-        return true;
-    } else {
-        return false;
-    }
-
-}
-
-// save data
-app.post("/data", function (req, res) {
-    let req_data = req.body,
-        temp = req_data["temp"],
-        content = req_data["content"],
-        date = req_data["date"],
-        saveData = saveData(temp, content, date);
-    if (saveData){
         res.send(JSON.stringify({
             "success": true,
         }));
