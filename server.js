@@ -37,6 +37,41 @@ app.get("/data", function(req, res) {
     }));
 })
 
+// save given data into projectData
+let saveData = (temp, content, date) => {
+    // verify that all needed values are giving on the request
+    if (temp && content && date) {
+        projectData = {
+            temp: temp,
+            content: content,
+            date: date
+        }
+        return true;
+    } else {
+        return false;
+    }
+
+}
+
+// save data
+app.post("/data", function (req, res) {
+    let req_data = req.body,
+        temp = req_data["temp"],
+        content = req_data["content"],
+        date = req_data["date"],
+        saveData = saveData(temp, content, date);
+    if (saveData){
+        res.send(JSON.stringify({
+            "success": true,
+        }));
+    } else {
+        res.status(400).send(JSON.stringify({
+            "success": false,
+            "message": "Bad Request"
+        }));
+    }
+})
+
 // Server Setup
 app.listen(port, () => {
     console.log(`Server is running at http://localhost:${port}`)

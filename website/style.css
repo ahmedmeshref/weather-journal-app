@@ -3,8 +3,12 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
+
 section {
-    margin: 50px 200px;
+    max-width: 80%;
+    margin: 0 auto;
+    padding-bottom: 20px;
+    padding-top: 20px;
 }
 
 div.title{
