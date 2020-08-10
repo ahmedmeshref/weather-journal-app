@@ -4,7 +4,7 @@
   "description": "## Asynchronous web app that uses Web API and user data to dynamically update the UI.",
   "main": "server.js",
   "scripts": {
-    "test": "jest test.js --watchAll",
+    "test": "jest app.test.js --watch",
     "start": "nodemon server.js"
   },
   "repository": {
@@ -25,6 +25,7 @@
   },
   "devDependencies": {
     "jest": "^26.3.0",
-    "nodemon": "^2.0.4"
+    "nodemon": "^2.0.4",
+    "supertest": "^4.0.2"
   }
 }

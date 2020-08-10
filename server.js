@@ -30,10 +30,10 @@ Routes
  */
 // return projectData
 app.get("/feeling", function (req, res) {
-    res.send(JSON.stringify({
+    res.json({
         'success': true,
         'data': projectData
-    }));
+    });
 })
 
 // post data handler
@@ -44,19 +44,17 @@ app.post("/feeling", function (req, res) {
         date = req_data["date"];
     // verify that all needed values are giving on the request
     if (temp && content && date) {
-        projectData = {
-            temp: temp,
-            content: content,
-            date: date
-        }
-        res.send(JSON.stringify({
+        projectData.temp = temp;
+        projectData.date = date;
+        projectData.content = content;
+        res.json({
             "success": true,
-        }));
+        });
     } else {
-        res.status(400).send(JSON.stringify({
+        res.status(400).json({
             "success": false,
             "message": "Bad Request"
-        }));
+        });
     }
 })
 
@@ -68,3 +66,6 @@ const port = process.env.NODE_ENV === 'test' ? 3001 : 3000;
 const server = app.listen(port, () => {
     console.log(`Server is running at http://localhost:${port}`)
 });
+
+
+module.exports = app

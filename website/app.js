@@ -65,7 +65,8 @@ let populateEntry = (data) => {
  * Send get request to the last saved record and render it to the user.
  */
 let showData = () => {
-    const url = 'http://localhost:8000/feeling',
+    console.log("start showing");
+    const url = 'http://localhost:3000/feeling',
         method = 'GET';
     sendRequest(url, method)
         .then((resVal) => {
@@ -88,7 +89,8 @@ let showData = () => {
  * @return showData {function}
  */
 let saveData = (temp, feelings) => {
-    const url = 'http://localhost:8000/feeling',
+    console.log(temp);
+    const url = 'http://localhost:3000/feeling',
         method = 'POST',
         data = {
             date : getDate(),
