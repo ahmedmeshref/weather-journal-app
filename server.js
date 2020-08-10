@@ -3,8 +3,7 @@ app dependencies
  */
 const express = require("express"),
     cors = require("cors"),
-    bodyParser = require("body-parser"),
-    port = 8000;
+    bodyParser = require("body-parser");
 
 // Setup empty JS object to act as endpoint for all routes
 let projectData = {};
@@ -61,7 +60,11 @@ app.post("/feeling", function (req, res) {
     }
 })
 
-// Server Setup
+/*
+ Server Setup
+ */
+// use port 3001 for testing and 3000 for development
+const port = process.env.NODE_ENV === 'test' ? 3001 : 3000;
 const server = app.listen(port, () => {
     console.log(`Server is running at http://localhost:${port}`)
 });

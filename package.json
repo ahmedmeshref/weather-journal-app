@@ -1,10 +1,10 @@
 {
   "name": "weather-journal-app",
   "version": "1.0.0",
-  "description": "## Overview This project requires you to create an asynchronous web app that uses Web API and user data to dynamically update the UI.",
+  "description": "## Asynchronous web app that uses Web API and user data to dynamically update the UI.",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest test.js --watchAll",
     "start": "nodemon server.js"
   },
   "repository": {
@@ -18,11 +18,13 @@
   },
   "homepage": "https://github.com/ahmedmeshref/weather-journal-app#readme",
   "dependencies": {
+    "@jest/globals": "^26.3.0",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "express": "^4.17.1"
   },
   "devDependencies": {
+    "jest": "^26.3.0",
     "nodemon": "^2.0.4"
   }
 }
