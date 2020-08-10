@@ -21,9 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1385766c-a0b9-42fe-8d2c-4f07c0615cc7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/website/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.test.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +56,7 @@
     <property name="nodejs.jest.jest_package" value="$PROJECT_DIR$/node_modules/jest" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
-  <component name="RunManager" selected="Jest.getData">
+  <component name="RunManager" selected="Jest.sendData">
     <configuration name="Fake test" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
@@ -69,19 +67,6 @@
       <test-file value="$PROJECT_DIR$/test.js" />
       <test-names>
         <test-name value="Fake test" />
-      </test-names>
-      <method v="2" />
-    </configuration>
-    <configuration name="adds 1 + 2 to equal 3" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <node-options value="" />
-      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
-      <working-dir value="$PROJECT_DIR$" />
-      <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/test.js" />
-      <test-names>
-        <test-name value="adds 1 + 2 to equal 3" />
       </test-names>
       <method v="2" />
     </configuration>
@@ -121,13 +106,26 @@
       </test-names>
       <method v="2" />
     </configuration>
+    <configuration name="sendData" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/app.test.js" />
+      <test-names>
+        <test-name value="sendData" />
+      </test-names>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Jest.sendData" />
         <item itemvalue="Jest.getData" />
         <item itemvalue="Jest.fake" />
         <item itemvalue="Jest.app.test.js" />
         <item itemvalue="Jest.Fake test" />
-        <item itemvalue="Jest.adds 1 + 2 to equal 3" />
       </list>
     </recent_temporary>
   </component>
@@ -141,7 +139,7 @@
       <updated>1596895411029</updated>
       <workItem from="1596895412159" duration="5214000" />
       <workItem from="1596976536563" duration="10593000" />
-      <workItem from="1597079294776" duration="7649000" />
+      <workItem from="1597079294776" duration="8556000" />
     </task>
     <servers />
   </component>
@@ -168,21 +166,21 @@
       <screen x="0" y="0" width="1500" height="1000" />
     </state>
     <state x="478" y="196" key="FileChooserDialogImpl/0.0.1500.1000@0.0.1500.1000" timestamp="1597080010930" />
-    <state width="1474" height="495" key="GridCell.Tab.0.bottom" timestamp="1597089205620">
+    <state width="1474" height="635" key="GridCell.Tab.0.bottom" timestamp="1597090904427">
       <screen x="0" y="0" width="1500" height="1000" />
     </state>
-    <state width="1474" height="495" key="GridCell.Tab.0.bottom/0.0.1500.1000@0.0.1500.1000" timestamp="1597089205620" />
-    <state width="1474" height="495" key="GridCell.Tab.0.center" timestamp="1597089205620">
+    <state width="1474" height="635" key="GridCell.Tab.0.bottom/0.0.1500.1000@0.0.1500.1000" timestamp="1597090904427" />
+    <state width="1474" height="635" key="GridCell.Tab.0.center" timestamp="1597090904427">
       <screen x="0" y="0" width="1500" height="1000" />
     </state>
-    <state width="1474" height="495" key="GridCell.Tab.0.center/0.0.1500.1000@0.0.1500.1000" timestamp="1597089205620" />
-    <state width="1474" height="495" key="GridCell.Tab.0.left" timestamp="1597089205620">
+    <state width="1474" height="635" key="GridCell.Tab.0.center/0.0.1500.1000@0.0.1500.1000" timestamp="1597090904427" />
+    <state width="1474" height="635" key="GridCell.Tab.0.left" timestamp="1597090904427">
       <screen x="0" y="0" width="1500" height="1000" />
     </state>
-    <state width="1474" height="495" key="GridCell.Tab.0.left/0.0.1500.1000@0.0.1500.1000" timestamp="1597089205620" />
-    <state width="1474" height="495" key="GridCell.Tab.0.right" timestamp="1597089205620">
+    <state width="1474" height="635" key="GridCell.Tab.0.left/0.0.1500.1000@0.0.1500.1000" timestamp="1597090904427" />
+    <state width="1474" height="635" key="GridCell.Tab.0.right" timestamp="1597090904427">
       <screen x="0" y="0" width="1500" height="1000" />
     </state>
-    <state width="1474" height="495" key="GridCell.Tab.0.right/0.0.1500.1000@0.0.1500.1000" timestamp="1597089205620" />
+    <state width="1474" height="635" key="GridCell.Tab.0.right/0.0.1500.1000@0.0.1500.1000" timestamp="1597090904427" />
   </component>
 </project>
