@@ -1,7 +1,9 @@
 const app = require('./server')
 const request = require('supertest');
 
-
+/**
+ * Set the app environment to be test
+ */
 beforeAll(() => {
     process.env.NODE_ENV = 'test';
 })
