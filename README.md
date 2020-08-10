@@ -22,6 +22,9 @@ After cloning, open your terminal and run:
 npm install
 ```
 
+### Test Application 
+From the project directory, run: `npm test`.  
+
 ### Run Application 
 Use npm to run the application in the debugging mode. In your terminal run: `npm start` and  
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser. 
