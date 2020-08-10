@@ -1,7 +1,7 @@
 /* Global Variable */
 let app = {
     api_key : "98bf2f70d6152c256797eded99bd67d0",
-    api_url : "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather",
+    api_url : "http://api.openweathermap.org/data/2.5/weather?zip=",
     form : document.getElementById("generate"),
     zip_code : document.getElementById("zip"),
     feelings : document.getElementById("feelings"),
@@ -45,37 +45,54 @@ let print = (txt) => {
     console.log(txt);
 }
 
+// populate the entry holder with the given data
 let populateEntry = (data) => {
-    app.temp_holder.innerHTML = `Temp: ${data.temp}`;
-    app.content_holder.innerHTML = `Content: ${data.content}`;
-    app.date_holder.innerHTML = `Date: ${data.date}`;
+    try {
+        app.temp_holder.innerHTML = `Temp: ${data.temp}`;
+        app.content_holder.innerHTML = `Content: ${data.content}`;
+        app.date_holder.innerHTML = `Date: ${data.date}`;
+    } catch (e) {
+        alert("Data is missing.");
+    }
+
 }
 
 
 //----------------------------------------------------------------------------------------------------------------
 // save, get, show data
 //----------------------------------------------------------------------------------------------------------------
+/**
+ * Send get request to the last saved record and render it to the user.
+ */
 let showData = () => {
     const url = 'http://localhost:8000/feeling',
         method = 'GET';
     sendRequest(url, method)
         .then((resVal) => {
-            populateEntry(resVal.data);
-            makeFieldsNull([app.feelings, app.zip_code]);
-            print("Data added successfully.")
+            try {
+                populateEntry(resVal.data);
+                makeFieldsNull([app.feelings, app.zip_code]);
+            } catch (e) {
+                alert("No data found!");
+            }
         })
         .catch((err) => {
             print(err);
         })
 }
 
-
-let saveData = (temp) => {
+/**
+ * Send post request to save given data.
+ * @param temp {int}
+ * @param feelings {string}
+ * @return showData {function}
+ */
+let saveData = (temp, feelings) => {
     const url = 'http://localhost:8000/feeling',
         method = 'POST',
         data = {
             date : getDate(),
-            content : app.feelings.value,
+            content : feelings,
             temp: temp
         };
     sendRequest(url, method, data)
@@ -85,21 +102,27 @@ let saveData = (temp) => {
         })
 }
 
-let getData = async (zip_code) => {
-    const url = `${app.api_url}?zip=${zip_code}&appid=${app.api_key}`,
-        method = 'GET';
-    let result = await sendRequest(url, method);
+/**
+ * Get data from OpenWeatherMap API.
+ * @param baseURL {string}
+ * @param apiKey {string}
+ * @param zipCode {int}
+ * @returns saveData {function}
+ */
+let getData = async (baseURL, zipCode, apiKey) => {
+    const response  = await fetch(baseURL + zipCode + '&appid=' + apiKey + '&units=imperial'),
+        resVal = await response.json();
     try {
-        return saveData(result.main.temp)
+        return saveData(resVal.main.temp, app.feelings.value);
     }
     catch (err) {
         alert("Zip code is not correct!");
     }
 }
 
-let addNewFeelings = (e) => {
+let listenToSubmit = (e) => {
     e.preventDefault();
-    return getData(app.zip_code.value);
+    return getData(app.api_url, app.zip_code.value, app.api_key);
 }
 
-app.form.addEventListener('submit', addNewFeelings)
+app.form.addEventListener('submit', listenToSubmit);

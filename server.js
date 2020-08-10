@@ -39,7 +39,7 @@ app.get("/feeling", function (req, res) {
 
 // post data handler
 app.post("/feeling", function (req, res) {
-    let req_data = req.body,
+    const req_data = req.body,
         temp = req_data["temp"],
         content = req_data["content"],
         date = req_data["date"];
@@ -62,6 +62,6 @@ app.post("/feeling", function (req, res) {
 })
 
 // Server Setup
-app.listen(port, () => {
+const server = app.listen(port, () => {
     console.log(`Server is running at http://localhost:${port}`)
-})
+});
